@@ -1,11 +1,11 @@
 {
-    "name": "voyage_ui",
-    "short_name": "voyage_ui",
+    "name": "voyageui",
+    "short_name": "voyageui",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Ease your trip planning with voyage-pilot",
+    "description": "Voyage Pilot UI",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

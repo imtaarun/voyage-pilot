@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.evoyage" "\0"
-            VALUE "FileDescription", "voyage_ui" "\0"
+            VALUE "CompanyName", "com.voyage" "\0"
+            VALUE "FileDescription", "voyageui" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "voyage_ui" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.evoyage. All rights reserved." "\0"
-            VALUE "OriginalFilename", "voyage_ui.exe" "\0"
-            VALUE "ProductName", "voyage_ui" "\0"
+            VALUE "InternalName", "voyageui" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 com.voyage. All rights reserved." "\0"
+            VALUE "OriginalFilename", "voyageui.exe" "\0"
+            VALUE "ProductName", "voyageui" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
