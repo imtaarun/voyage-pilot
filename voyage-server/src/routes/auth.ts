@@ -1,28 +1,25 @@
 // src/routes/auth.ts
 import express from 'express';
-import { User } from '../models/User';
+import { User } from '../models/user.model';
+import bcrypt from 'bcrypt';
 
 const router = express.Router();
 
-router.get('/login', (req: express.Request, res: express.Response) => {
-    // Assume you have a login form
-    // Check user credentials and set session if valid
-    const user: User = { id: 'user123', username: 'example', password: 'password' };
+router.post('/login', async (req: express.Request, res: express.Response) => {
+    // Mock user for demonstration using Sequelize's build method
+    const user = await User.findOne({ where: { email: req.body.email } });
+      if (!user) {
+        return res.status(401).json({ message: 'user with email ' + req.body.email + ' not found' });
+      }
+      const isValid = await bcrypt.compareSync(req.body.password, user.passwordHash);
+      if (!isValid) {
+        return res.status(401).json({ message: 'Invalid email and password combination' });
+      }
     req.session.user = user;
-    res.send('Logged in successfully');
-});
-
-router.get('/dashboard', (req: express.Request, res: express.Response) => {
-    if (req.session.user != undefined) {
-        const user: User = req.session.user;
-        res.send(`Welcome to the Dashboard, ${user.username}!`);
-    } else {
-        res.send('User not logged in')
-    }
+    return res.status(200).json({ message: 'Login successful', user: { id: user.id, username: user.username, email: user.email } });
 });
 
 router.get('/logout', (req: express.Request, res: express.Response) => {
-    // Destroy session on logout
     req.session.destroy((err) => {
         if (err) {
             return res.status(500).send('Internal Server Error');

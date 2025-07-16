@@ -36,15 +36,26 @@ To set up the development environment for this project, follow these steps:
      ```bash
      npm install
      ```
+3. **Database Setup**
 
-3. **Launch the Application**
+   - Install Postgresql vesrion 10+
+   - To create database, run the following command in the terminal:
+     ```bash
+     npm run db-init
+     ```
+   - To init database (create necessary tables), run the following command in the terminal:
+     ```bash
+     npm run migrate
+     ```
+
+4. **Launch the Application**
 
    - To start the application, run the following command in the terminal:
      ```bash
-     npm start
+     npm run start
      ```
 
-4. **Use Visual Studio Code (VS Code) for Development**
+5. **Use Visual Studio Code (VS Code) for Development**
 
    - For an optimal development experience, use [Visual Studio Code](https://code.visualstudio.com) as your IDE.
 
